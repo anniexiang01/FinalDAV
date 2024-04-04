@@ -302,22 +302,118 @@ always_comb begin
 				W7 = W16_0;
 				W8 = W16_0;
 				
-				A1 = f[];
-				B1 = f[];
-				A2 = f[];
-				B2 = f[];
-				A3 = f[];
-				B3 = f[];
-				A4 = f[];
-				B4 = f[];
-				A5 = f[];
-				B5 = f[];
-				A6 = f[];
-				B6 = f[];
-				A7 = f[];
-				B7 = f[];
-				A8 = f[];
-				B8 = f[];
+				A1 = temp[];
+				B1 = temp[];
+				A2 = temp[];
+				B2 = temp[];
+				A3 = temp[];
+				B3 = temp[];
+				A4 = temp[];
+				B4 = temp[];
+				A5 = temp[];
+				B5 = temp[];
+				A6 = temp[];
+				B6 = temp[];
+				A7 = temp[];
+				B7 = temp[];
+				A8 = temp[];
+				B8 = temp[];
+				
+				F[0] = {WIDTH{1'b0}};
+				F[1] = {WIDTH{1'b0}};
+				F[2] = {WIDTH{1'b0}};
+				F[3] = {WIDTH{1'b0}};
+				F[4] = {WIDTH{1'b0}};
+				F[5] = {WIDTH{1'b0}};
+				F[6] = {WIDTH{1'b0}};
+				F[7] = {WIDTH{1'b0}};
+				F[8] = {WIDTH{1'b0}};
+				F[9] = {WIDTH{1'b0}};
+				F[10] = {WIDTH{1'b0}};
+				F[11] = {WIDTH{1'b0}};
+				F[12] = {WIDTH{1'b0}};
+				F[13] = {WIDTH{1'b0}};
+				F[14] = {WIDTH{1'b0}};
+				F[15] = {WIDTH{1'b0}};
+				
+				done = 1'b0;
+				next_state = STAGE3;
+			end
+		STAGE3:
+			begin
+				W1 = W16_0;
+				W2 = W16_0;
+				W3 = W16_0;
+				W4 = W16_0;
+				W5 = W16_0;
+				W6 = W16_0;
+				W7 = W16_0;
+				W8 = W16_0;
+				
+				A1 = temp[];
+				B1 = temp[];
+				A2 = temp[];
+				B2 = temp[];
+				A3 = temp[];
+				B3 = temp[];
+				A4 = temp[];
+				B4 = temp[];
+				A5 = temp[];
+				B5 = temp[];
+				A6 = temp[];
+				B6 = temp[];
+				A7 = temp[];
+				B7 = temp[];
+				A8 = temp[];
+				B8 = temp[];
+				
+				F[0] = {WIDTH{1'b0}};
+				F[1] = {WIDTH{1'b0}};
+				F[2] = {WIDTH{1'b0}};
+				F[3] = {WIDTH{1'b0}};
+				F[4] = {WIDTH{1'b0}};
+				F[5] = {WIDTH{1'b0}};
+				F[6] = {WIDTH{1'b0}};
+				F[7] = {WIDTH{1'b0}};
+				F[8] = {WIDTH{1'b0}};
+				F[9] = {WIDTH{1'b0}};
+				F[10] = {WIDTH{1'b0}};
+				F[11] = {WIDTH{1'b0}};
+				F[12] = {WIDTH{1'b0}};
+				F[13] = {WIDTH{1'b0}};
+				F[14] = {WIDTH{1'b0}};
+				F[15] = {WIDTH{1'b0}};
+				
+				done = 1'b0;
+				next_state = STAGE4;
+			end
+		STAGE4:
+			begin
+				W1 = W16_0;
+				W2 = W16_0;
+				W3 = W16_0;
+				W4 = W16_0;
+				W5 = W16_0;
+				W6 = W16_0;
+				W7 = W16_0;
+				W8 = W16_0;
+				
+				A1 = temp[];
+				B1 = temp[];
+				A2 = temp[];
+				B2 = temp[];
+				A3 = temp[];
+				B3 = temp[];
+				A4 = temp[];
+				B4 = temp[];
+				A5 = temp[];
+				B5 = temp[];
+				A6 = temp[];
+				B6 = temp[];
+				A7 = temp[];
+				B7 = temp[];
+				A8 = temp[];
+				B8 = temp[];
 				
 				F[0] = {WIDTH{1'b0}};
 				F[1] = {WIDTH{1'b0}};
@@ -441,22 +537,22 @@ always_comb begin
 					A8 = f[];
 					B8 = f[];
 					
-					F[0] = {WIDTH{1'b0}};
-					F[1] = {WIDTH{1'b0}};
-					F[2] = {WIDTH{1'b0}};
-					F[3] = {WIDTH{1'b0}};
-					F[4] = {WIDTH{1'b0}};
-					F[5] = {WIDTH{1'b0}};
-					F[6] = {WIDTH{1'b0}};
-					F[7] = {WIDTH{1'b0}};
-					F[8] = {WIDTH{1'b0}};
-					F[9] = {WIDTH{1'b0}};
-					F[10] = {WIDTH{1'b0}};
-					F[11] = {WIDTH{1'b0}};
-					F[12] = {WIDTH{1'b0}};
-					F[13] = {WIDTH{1'b0}};
-					F[14] = {WIDTH{1'b0}};
-					F[15] = {WIDTH{1'b0}};
+					F[0] = temp[];
+					F[1] = temp[];
+					F[2] = temp[];
+					F[3] = temp[];
+					F[4] = temp[];
+					F[5] = temp[];
+					F[6] = temp[];
+					F[7] = temp[];
+					F[8] = temp[];
+					F[9] = temp[];
+					F[10] = temp[];
+					F[11] = temp[];
+					F[12] = temp[];
+					F[13] = temp[];
+					F[14] = temp[];
+					F[15] = temp[];
 					
 					done = 1'b1;
 					next_state = state;
