@@ -1,9 +1,9 @@
 module fft_16pt #(WIDTH=36) (
-	input signed [WIDTH-1:0] f [0:3],
+	input signed [WIDTH-1:0] f [0:15],
 	input clock,
 	input reset,
 	input start,
-	output logic signed [WIDTH-1:0] F [0:3],
+	output logic signed [WIDTH-1:0] F [0:15],
 	output logic done
 );
 
@@ -23,8 +23,8 @@ localparam W16_5 = 36'b110011110000010001100010011011111001;
 localparam W16_6 = 36'b101001010111110110101001010111110110;
 localparam W16_7 = 36'b100010011011111001110011110000010001;
 
-logic [1:0] state;
-logic [1:0] next_state;
+logic [2:0] state;
+logic [2:0] next_state;
 
 logic signed [WIDTH-1:0] A1;
 logic signed [WIDTH-1:0] B1;
@@ -132,22 +132,22 @@ always_comb begin
 					W7 = W16_0;
 					W8 = W16_0;
 					
-					A1 = f[];
-					B1 = f[];
-					A2 = f[];
-					B2 = f[];
-					A3 = f[];
-					B3 = f[];
-					A4 = f[];
-					B4 = f[];
-					A5 = f[];
-					B5 = f[];
-					A6 = f[];
-					B6 = f[];
-					A7 = f[];
-					B7 = f[];
-					A8 = f[];
-					B8 = f[];
+					A1 = {WIDTH{1'b0}};
+					B1 = {WIDTH{1'b0}};
+					A2 = {WIDTH{1'b0}};
+					B2 = {WIDTH{1'b0}};
+					A3 = {WIDTH{1'b0}};
+					B3 = {WIDTH{1'b0}};
+					A4 = {WIDTH{1'b0}};
+					B4 = {WIDTH{1'b0}};
+					A5 = {WIDTH{1'b0}};
+					B5 = {WIDTH{1'b0}};
+					A6 = {WIDTH{1'b0}};
+					B6 = {WIDTH{1'b0}};
+					A7 = {WIDTH{1'b0}};
+					B7 = {WIDTH{1'b0}};
+					A8 = {WIDTH{1'b0}};
+					B8 = {WIDTH{1'b0}};
 					
 					F[0] = {WIDTH{1'b0}};
 					F[1] = {WIDTH{1'b0}};
@@ -179,22 +179,22 @@ always_comb begin
 					W7 = W16_0;
 					W8 = W16_0;
 					
-					A1 = f[];
-					B1 = f[];
-					A2 = f[];
-					B2 = f[];
-					A3 = f[];
-					B3 = f[];
-					A4 = f[];
-					B4 = f[];
-					A5 = f[];
-					B5 = f[];
-					A6 = f[];
-					B6 = f[];
-					A7 = f[];
-					B7 = f[];
-					A8 = f[];
-					B8 = f[];
+					A1 = {WIDTH{1'b0}};
+					B1 = {WIDTH{1'b0}};
+					A2 = {WIDTH{1'b0}};
+					B2 = {WIDTH{1'b0}};
+					A3 = {WIDTH{1'b0}};
+					B3 = {WIDTH{1'b0}};
+					A4 = {WIDTH{1'b0}};
+					B4 = {WIDTH{1'b0}};
+					A5 = {WIDTH{1'b0}};
+					B5 = {WIDTH{1'b0}};
+					A6 = {WIDTH{1'b0}};
+					B6 = {WIDTH{1'b0}};
+					A7 = {WIDTH{1'b0}};
+					B7 = {WIDTH{1'b0}};
+					A8 = {WIDTH{1'b0}};
+					B8 = {WIDTH{1'b0}};
 					
 					F[0] = {WIDTH{1'b0}};
 					F[1] = {WIDTH{1'b0}};
@@ -241,22 +241,25 @@ always_comb begin
 				W7 = W16_0;
 				W8 = W16_0;
 				
-				A1 = f[];
-				B1 = f[];
-				A2 = f[];
-				B2 = f[];
-				A3 = f[];
-				B3 = f[];
-				A4 = f[];
-				B4 = f[];
-				A5 = f[];
-				B5 = f[];
-				A6 = f[];
-				B6 = f[];
-				A7 = f[];
-				B7 = f[];
-				A8 = f[];
-				B8 = f[];
+				A1 = f[0];
+				B1 = f[8];
+				A2 = f[4];
+				B2 = f[12];
+				
+				A3 = f[2];
+				B3 = f[10];
+				A4 = f[6];
+				B4 = f[14];
+				
+				A5 = f[1];
+				B5 = f[9];
+				A6 = f[5];
+				B6 = f[13];
+				
+				A7 = f[3];
+				B7 = f[11];
+				A8 = f[7];
+				B8 = f[15];
 				
 				F[0] = {WIDTH{1'b0}};
 				F[1] = {WIDTH{1'b0}};
@@ -302,22 +305,25 @@ always_comb begin
 				W7 = W16_0;
 				W8 = W16_4;
 				
-				A1 = temp[];
-				B1 = temp[];
-				A2 = temp[];
-				B2 = temp[];
-				A3 = temp[];
-				B3 = temp[];
-				A4 = temp[];
-				B4 = temp[];
-				A5 = temp[];
-				B5 = temp[];
-				A6 = temp[];
-				B6 = temp[];
-				A7 = temp[];
-				B7 = temp[];
-				A8 = temp[];
-				B8 = temp[];
+				A1 = temp[0];
+				B1 = temp[2];
+				A2 = temp[1];
+				B2 = temp[3];
+				
+				A3 = temp[4];
+				B3 = temp[6];
+				A4 = temp[5];
+				B4 = temp[7];
+				
+				A5 = temp[8];
+				B5 = temp[10];
+				A6 = temp[9];
+				B6 = temp[11];
+				
+				A7 = temp[12];
+				B7 = temp[14];
+				A8 = temp[13];
+				B8 = temp[15];
 				
 				F[0] = {WIDTH{1'b0}};
 				F[1] = {WIDTH{1'b0}};
@@ -350,22 +356,25 @@ always_comb begin
 				W7 = W16_4;
 				W8 = W16_6;
 				
-				A1 = temp[];
-				B1 = temp[];
-				A2 = temp[];
-				B2 = temp[];
-				A3 = temp[];
-				B3 = temp[];
-				A4 = temp[];
-				B4 = temp[];
-				A5 = temp[];
-				B5 = temp[];
-				A6 = temp[];
-				B6 = temp[];
-				A7 = temp[];
-				B7 = temp[];
-				A8 = temp[];
-				B8 = temp[];
+				A1 = temp[0];
+				B1 = temp[4];
+				A2 = temp[2];
+				B2 = temp[6];
+				
+				A3 = temp[1];
+				B3 = temp[5];
+				A4 = temp[3];
+				B4 = temp[7];
+				
+				A5 = temp[8];
+				B5 = temp[12];
+				A6 = temp[10];
+				B6 = temp[14];
+				
+				A7 = temp[9];
+				B7 = temp[13];
+				A8 = temp[11];
+				B8 = temp[15];
 				
 				F[0] = {WIDTH{1'b0}};
 				F[1] = {WIDTH{1'b0}};
@@ -398,22 +407,25 @@ always_comb begin
 				W7 = W16_6;
 				W8 = W16_7;
 				
-				A1 = temp[];
-				B1 = temp[];
-				A2 = temp[];
-				B2 = temp[];
-				A3 = temp[];
-				B3 = temp[];
-				A4 = temp[];
-				B4 = temp[];
-				A5 = temp[];
-				B5 = temp[];
-				A6 = temp[];
-				B6 = temp[];
-				A7 = temp[];
-				B7 = temp[];
-				A8 = temp[];
-				B8 = temp[];
+				A1 = temp[0];
+				B1 = temp[8];
+				A2 = temp[2];
+				B2 = temp[10];
+				
+				A3 = temp[4];
+				B3 = temp[12];
+				A4 = temp[6];
+				B4 = temp[14];
+				
+				A5 = temp[1];
+				B5 = temp[9];
+				A6 = temp[3];
+				B6 = temp[11];
+				
+				A7 = temp[5];
+				B7 = temp[13];
+				A8 = temp[7];
+				B8 = temp[15];
 				
 				F[0] = {WIDTH{1'b0}};
 				F[1] = {WIDTH{1'b0}};
@@ -460,22 +472,22 @@ always_comb begin
 					W7 = W16_0;
 					W8 = W16_0;
 					
-					A1 = f[];
-					B1 = f[];
-					A2 = f[];
-					B2 = f[];
-					A3 = f[];
-					B3 = f[];
-					A4 = f[];
-					B4 = f[];
-					A5 = f[];
-					B5 = f[];
-					A6 = f[];
-					B6 = f[];
-					A7 = f[];
-					B7 = f[];
-					A8 = f[];
-					B8 = f[];
+					A1 = {WIDTH{1'b0}};
+					B1 = {WIDTH{1'b0}};
+					A2 = {WIDTH{1'b0}};
+					B2 = {WIDTH{1'b0}};
+					A3 = {WIDTH{1'b0}};
+					B3 = {WIDTH{1'b0}};
+					A4 = {WIDTH{1'b0}};
+					B4 = {WIDTH{1'b0}};
+					A5 = {WIDTH{1'b0}};
+					B5 = {WIDTH{1'b0}};
+					A6 = {WIDTH{1'b0}};
+					B6 = {WIDTH{1'b0}};
+					A7 = {WIDTH{1'b0}};
+					B7 = {WIDTH{1'b0}};
+					A8 = {WIDTH{1'b0}};
+					B8 = {WIDTH{1'b0}};
 					
 					F[0] = {WIDTH{1'b0}};
 					F[1] = {WIDTH{1'b0}};
@@ -520,39 +532,39 @@ always_comb begin
 					W7 = W16_0;
 					W8 = W16_0;
 					
-					A1 = f[];
-					B1 = f[];
-					A2 = f[];
-					B2 = f[];
-					A3 = f[];
-					B3 = f[];
-					A4 = f[];
-					B4 = f[];
-					A5 = f[];
-					B5 = f[];
-					A6 = f[];
-					B6 = f[];
-					A7 = f[];
-					B7 = f[];
-					A8 = f[];
-					B8 = f[];
+					A1 = {WIDTH{1'b0}};
+					B1 = {WIDTH{1'b0}};
+					A2 = {WIDTH{1'b0}};
+					B2 = {WIDTH{1'b0}};
+					A3 = {WIDTH{1'b0}};
+					B3 = {WIDTH{1'b0}};
+					A4 = {WIDTH{1'b0}};
+					B4 = {WIDTH{1'b0}};
+					A5 = {WIDTH{1'b0}};
+					B5 = {WIDTH{1'b0}};
+					A6 = {WIDTH{1'b0}};
+					B6 = {WIDTH{1'b0}};
+					A7 = {WIDTH{1'b0}};
+					B7 = {WIDTH{1'b0}};
+					A8 = {WIDTH{1'b0}};
+					B8 = {WIDTH{1'b0}};
 					
-					F[0] = temp[];
-					F[1] = temp[];
-					F[2] = temp[];
-					F[3] = temp[];
-					F[4] = temp[];
-					F[5] = temp[];
-					F[6] = temp[];
-					F[7] = temp[];
-					F[8] = temp[];
-					F[9] = temp[];
-					F[10] = temp[];
-					F[11] = temp[];
-					F[12] = temp[];
-					F[13] = temp[];
-					F[14] = temp[];
-					F[15] = temp[];
+					F[0] = temp[0];
+					F[1] = temp[2];
+					F[2] = temp[4];
+					F[3] = temp[6];
+					F[4] = temp[8];
+					F[5] = temp[10];
+					F[6] = temp[12];
+					F[7] = temp[14];
+					F[8] = temp[1];
+					F[9] = temp[3];
+					F[10] = temp[5];
+					F[11] = temp[7];
+					F[12] = temp[9];
+					F[13] = temp[11];
+					F[14] = temp[13];
+					F[15] = temp[15];
 					
 					done = 1'b1;
 					next_state = state;
@@ -582,22 +594,22 @@ always_comb begin
 				W7 = W16_0;
 				W8 = W16_0;
 				
-				A1 = f[];
-				B1 = f[];
-				A2 = f[];
-				B2 = f[];
-				A3 = f[];
-				B3 = f[];
-				A4 = f[];
-				B4 = f[];
-				A5 = f[];
-				B5 = f[];
-				A6 = f[];
-				B6 = f[];
-				A7 = f[];
-				B7 = f[];
-				A8 = f[];
-				B8 = f[];
+				A1 = {WIDTH{1'b0}};
+				B1 = {WIDTH{1'b0}};
+				A2 = {WIDTH{1'b0}};
+				B2 = {WIDTH{1'b0}};
+				A3 = {WIDTH{1'b0}};
+				B3 = {WIDTH{1'b0}};
+				A4 = {WIDTH{1'b0}};
+				B4 = {WIDTH{1'b0}};
+				A5 = {WIDTH{1'b0}};
+				B5 = {WIDTH{1'b0}};
+				A6 = {WIDTH{1'b0}};
+				B6 = {WIDTH{1'b0}};
+				A7 = {WIDTH{1'b0}};
+				B7 = {WIDTH{1'b0}};
+				A8 = {WIDTH{1'b0}};
+				B8 = {WIDTH{1'b0}};
 				
 				F[0] = {WIDTH{1'b0}};
 				F[1] = {WIDTH{1'b0}};
