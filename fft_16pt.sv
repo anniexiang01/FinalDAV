@@ -125,34 +125,101 @@ always_comb begin
 				if (start == 1'b1) begin
 					W1 = W4_0;
 					W2 = W4_0;
-					A1 = f[0];
-					B1 = f[2];
-					A2 = f[1];
-					B2 = f[3];
+					W3 = W4_0;
+					W4 = W4_0;
+					W5 = W4_0;
+					W6 = W4_0;
+					W7 = W4_0;
+					W8 = W4_0;
+					
+					A1 = f[];
+					B1 = f[];
+					A2 = f[];
+					B2 = f[];
+					A3 = f[];
+					B3 = f[];
+					A4 = f[];
+					B4 = f[];
+					A5 = f[];
+					B5 = f[];
+					A6 = f[];
+					B6 = f[];
+					A7 = f[];
+					B7 = f[];
+					A8 = f[];
+					B8 = f[];
+					
 					F[0] = {WIDTH{1'b0}};
 					F[1] = {WIDTH{1'b0}};
 					F[2] = {WIDTH{1'b0}};
 					F[3] = {WIDTH{1'b0}};
+					F[4] = {WIDTH{1'b0}};
+					F[5] = {WIDTH{1'b0}};
+					F[6] = {WIDTH{1'b0}};
+					F[7] = {WIDTH{1'b0}};
+					F[8] = {WIDTH{1'b0}};
+					F[9] = {WIDTH{1'b0}};
+					F[10] = {WIDTH{1'b0}};
+					F[11] = {WIDTH{1'b0}};
+					F[12] = {WIDTH{1'b0}};
+					F[13] = {WIDTH{1'b0}};
+					F[14] = {WIDTH{1'b0}};
+					F[15] = {WIDTH{1'b0}};
+					
 					done = 1'b0;
 					next_state = STAGE1;
 				end
 				else begin
 					W1 = W4_0;
 					W2 = W4_0;
-					A1 = f[0];
-					B1 = f[2];
-					A2 = f[1];
-					B2 = f[3];
+					W3 = W4_0;
+					W4 = W4_0;
+					W5 = W4_0;
+					W6 = W4_0;
+					W7 = W4_0;
+					W8 = W4_0;
+					
+					A1 = f[];
+					B1 = f[];
+					A2 = f[];
+					B2 = f[];
+					A3 = f[];
+					B3 = f[];
+					A4 = f[];
+					B4 = f[];
+					A5 = f[];
+					B5 = f[];
+					A6 = f[];
+					B6 = f[];
+					A7 = f[];
+					B7 = f[];
+					A8 = f[];
+					B8 = f[];
+					
 					F[0] = {WIDTH{1'b0}};
 					F[1] = {WIDTH{1'b0}};
 					F[2] = {WIDTH{1'b0}};
 					F[3] = {WIDTH{1'b0}};
+					F[4] = {WIDTH{1'b0}};
+					F[5] = {WIDTH{1'b0}};
+					F[6] = {WIDTH{1'b0}};
+					F[7] = {WIDTH{1'b0}};
+					F[8] = {WIDTH{1'b0}};
+					F[9] = {WIDTH{1'b0}};
+					F[10] = {WIDTH{1'b0}};
+					F[11] = {WIDTH{1'b0}};
+					F[12] = {WIDTH{1'b0}};
+					F[13] = {WIDTH{1'b0}};
+					F[14] = {WIDTH{1'b0}};
+					F[15] = {WIDTH{1'b0}};
+					
 					done = 1'b0;
 					next_state = state;
 				end
 			end
 		STAGE1: 
 			begin
+				/*
 				W1 = W4_0;
 				W2 = W4_0;
 				A1 = f[0];
@@ -163,11 +230,13 @@ always_comb begin
 				F[1] = {WIDTH{1'b0}};
 				F[2] = {WIDTH{1'b0}};
 				F[3] = {WIDTH{1'b0}};
+				*/
 				done = 1'b0;
 				next_state = STAGE2;
 			end
 		STAGE2: 
 			begin
+				/*
 				W1 = W4_0;
 				W2 = W4_1;
 				A1 = temp[0];
@@ -178,12 +247,15 @@ always_comb begin
 				F[1] = {WIDTH{1'b0}};
 				F[2] = {WIDTH{1'b0}};
 				F[3] = {WIDTH{1'b0}};
+				*/
+				
 				done = 1'b0;
 				next_state = DONE;
 			end
 		DONE: 
 			begin
 				if (reset == 1'b1) begin
+					/*
 					W1 = W4_0;
 					W2 = W4_0;
 					A1 = f[0];
@@ -194,10 +266,13 @@ always_comb begin
 					F[1] = {WIDTH{1'b0}};
 					F[2] = {WIDTH{1'b0}};
 					F[3] = {WIDTH{1'b0}};
+					*/
+					
 					done = 1'b0;
 					next_state = RESET;
 				end
 				else begin
+					/*
 					W1 = W4_0;
 					W2 = W4_0;
 					A1 = f[0];
@@ -208,12 +283,15 @@ always_comb begin
 					F[1] = temp[2];
 					F[2] = temp[1];
 					F[3] = temp[3];
+					*/
+					
 					done = 1'b1;
 					next_state = state;
 				end
 			end
 		default: 
 			begin
+				/*
 				W1 = W4_0;
 				W2 = W4_0;
 				A1 = f[0];
@@ -224,6 +302,8 @@ always_comb begin
 				F[1] = {WIDTH{1'b0}};
 				F[2] = {WIDTH{1'b0}};
 				F[3] = {WIDTH{1'b0}};
+				*/
+				
 				done = 1'b0;
 				next_state = RESET;
 			end
