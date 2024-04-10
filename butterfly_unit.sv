@@ -16,7 +16,7 @@ module butterfly_unit #(WIDTH=32)(
 	wire signed [WIDTH-1:0] WB_re = W_re * B_re - W_im * B_im; // W_re and W_im must be stored in pre-shifted form
 	wire signed [WIDTH-1:0] WB_im = W_im * B_re + W_re * B_im;
 
-	wire signed [WIDTH/2-1:0] WB_re_trunc = WB_re[WIDTH-2:WIDTH/2-1]; // 31:0 -> 30:15 for WIDTH=32
+	wire signed [WIDTH/2-1:0] WB_re_trunc = WB_re[WIDTH-2:WIDTH/2-1];
 	wire signed [WIDTH/2-1:0] WB_im_trunc = WB_im[WIDTH-2:WIDTH/2-1];
 	
 	wire signed [WIDTH-1:0] ApWB_re = (A_re + WB_re_trunc) << WIDTH/2;
