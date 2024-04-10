@@ -19,10 +19,10 @@ module butterfly_unit #(WIDTH=32)(
 	wire signed [WIDTH/2-1:0] WB_re_trunc = WB_re[WIDTH-2:WIDTH/2-1]; // 31:0 -> 30:15 for WIDTH=32
 	wire signed [WIDTH/2-1:0] WB_im_trunc = WB_im[WIDTH-2:WIDTH/2-1];
 	
-	wire signed [WIDTH-1:0] ApWB_re = (A_re + WB_re_trunc) << 16;
+	wire signed [WIDTH-1:0] ApWB_re = (A_re + WB_re_trunc) << WIDTH/2;
 	wire signed [WIDTH-1:0] ApWB_im = A_im + WB_im_trunc;
 	
-	wire signed [WIDTH-1:0] AnWB_re = (A_re - WB_re_trunc) << 16;
+	wire signed [WIDTH-1:0] AnWB_re = (A_re - WB_re_trunc) << WIDTH/2;
 	wire signed [WIDTH-1:0] AnWB_im = A_im - WB_im_trunc;
 	
 	assign ApWB = ApWB_re + ApWB_im;

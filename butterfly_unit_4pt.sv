@@ -1,4 +1,4 @@
-module butterfly_unit #(WIDTH=32)(
+module butterfly_unit_4pt #(WIDTH=32)(
 	input signed [WIDTH-1:0] A,
 	input signed [WIDTH-1:0] B,
 	input signed [WIDTH-1:0] W,
@@ -25,7 +25,7 @@ module butterfly_unit #(WIDTH=32)(
 	wire signed [WIDTH/2-1:0] AnWB_re = A_re - WB_re_trunc;
 	wire signed [WIDTH/2-1:0] AnWB_im = A_im - WB_im_trunc;
 	
-	assign ApWB = ApWB_re << 16 + ApWB_im;
-	assign AnWB = AnWB_re << 16 + AnWB_im;
+	assign ApWB = ApWB_re << WIDTH/2 + ApWB_im;
+	assign AnWB = AnWB_re << WIDTH/2 + AnWB_im;
 	
 endmodule
