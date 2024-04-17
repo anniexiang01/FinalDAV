@@ -219,18 +219,6 @@ always_comb begin
 			end
 		STAGE1: 
 			begin
-				/*
-				W1 = W4_0;
-				W2 = W4_0;
-				A1 = f[0];
-				B1 = f[2];
-				A2 = f[1];
-				B2 = f[3];
-				F[0] = {WIDTH{1'b0}};
-				F[1] = {WIDTH{1'b0}};
-				F[2] = {WIDTH{1'b0}};
-				F[3] = {WIDTH{1'b0}};
-				*/
 				
 				W1 = W16_0;
 				W2 = W16_0;
@@ -283,18 +271,6 @@ always_comb begin
 			end
 		STAGE2: 
 			begin
-				/*
-				W1 = W4_0;
-				W2 = W4_1;
-				A1 = temp[0];
-				B1 = temp[2];
-				A2 = temp[1];
-				B2 = temp[3];
-				F[0] = {WIDTH{1'b0}};
-				F[1] = {WIDTH{1'b0}};
-				F[2] = {WIDTH{1'b0}};
-				F[3] = {WIDTH{1'b0}};
-				*/
 				
 				W1 = W16_0;
 				W2 = W16_4;
@@ -449,19 +425,9 @@ always_comb begin
 			end
 		DONE: 
 			begin
+				// ***TO-DO***
+				// Determine if reset needs to come *after* one cycle of DONE
 				if (reset == 1'b1) begin
-					/*
-					W1 = W4_0;
-					W2 = W4_0;
-					A1 = f[0];
-					B1 = f[2];
-					A2 = f[1];
-					B2 = f[3];
-					F[0] = {WIDTH{1'b0}};
-					F[1] = {WIDTH{1'b0}};
-					F[2] = {WIDTH{1'b0}};
-					F[3] = {WIDTH{1'b0}};
-					*/
 					
 					W1 = W16_0;
 					W2 = W16_0;
@@ -510,18 +476,6 @@ always_comb begin
 					next_state = RESET;
 				end
 				else begin
-					/*
-					W1 = W4_0;
-					W2 = W4_0;
-					A1 = f[0];
-					B1 = f[2];
-					A2 = f[1];
-					B2 = f[3];
-					F[0] = temp[0];
-					F[1] = temp[2];
-					F[2] = temp[1];
-					F[3] = temp[3];
-					*/
 					
 					W1 = W16_0;
 					W2 = W16_0;
@@ -572,19 +526,7 @@ always_comb begin
 			end
 		default: 
 			begin
-				/*
-				W1 = W4_0;
-				W2 = W4_0;
-				A1 = f[0];
-				B1 = f[2];
-				A2 = f[1];
-				B2 = f[3];
-				F[0] = {WIDTH{1'b0}};
-				F[1] = {WIDTH{1'b0}};
-				F[2] = {WIDTH{1'b0}};
-				F[3] = {WIDTH{1'b0}};
-				*/
-				
+
 				W1 = W16_0;
 				W2 = W16_0;
 				W3 = W16_0;
