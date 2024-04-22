@@ -1,5 +1,5 @@
 module fft_16pt #(WIDTH=36) (
-	input signed [WIDTH-1:0] f [0:15],
+		input signed [WIDTH-1:0] f [0:15],
 	input clock,
 	input reset,
 	input start,
@@ -455,24 +455,24 @@ always_comb begin
 					A8 = {WIDTH{1'b0}};
 					B8 = {WIDTH{1'b0}};
 					
-					F[0] = {WIDTH{1'b0}};
-					F[1] = {WIDTH{1'b0}};
-					F[2] = {WIDTH{1'b0}};
-					F[3] = {WIDTH{1'b0}};
-					F[4] = {WIDTH{1'b0}};
-					F[5] = {WIDTH{1'b0}};
-					F[6] = {WIDTH{1'b0}};
-					F[7] = {WIDTH{1'b0}};
-					F[8] = {WIDTH{1'b0}};
-					F[9] = {WIDTH{1'b0}};
-					F[10] = {WIDTH{1'b0}};
-					F[11] = {WIDTH{1'b0}};
-					F[12] = {WIDTH{1'b0}};
-					F[13] = {WIDTH{1'b0}};
-					F[14] = {WIDTH{1'b0}};
-					F[15] = {WIDTH{1'b0}};
+					F[0] = temp[0];
+					F[1] = temp[2];
+					F[2] = temp[4];
+					F[3] = temp[6];
+					F[4] = temp[8];
+					F[5] = temp[10];
+					F[6] = temp[12];
+					F[7] = temp[14];
+					F[8] = temp[1];
+					F[9] = temp[3];
+					F[10] = temp[5];
+					F[11] = temp[7];
+					F[12] = temp[9];
+					F[13] = temp[11];
+					F[14] = temp[13];
+					F[15] = temp[15];
 					
-					done = 1'b0;
+					done = 1'b1;
 					next_state = RESET;
 				end
 				else begin
